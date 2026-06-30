@@ -1,0 +1,13 @@
+<div class="d-block mx-auto p-4 w-50">
+  <h1>Stupid Coaching</h1>
+  <div class="question">
+    <p><%= params[:question] %></p>
+    <p class="fst-italic">- You</p>
+  </div>
+  <div class="answer">
+    <p><%= @answer %></p>
+    <p class="fst-italic">- Your Coach</p>
+  </div>
+
+  <%= link_to 'Ask a new question', ask_path %>
+</div>
