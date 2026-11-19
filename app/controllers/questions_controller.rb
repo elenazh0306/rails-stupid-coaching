@@ -1,9 +1,29 @@
 class QuestionsController < ApplicationController
-  def ask
+  def index
+    @questions = Question.order(created_at: :desc)
   end
 
-  def answer
-    @question = params[:question].to_s.strip
-    @answer = Coach.reply_to(@question)
+  def new
+    @question = Question.new
   end
+
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to @question
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def show
+    @question = Question.find(params[:id])
+  end
+
+  private
+
+  def question_params
+    params.expect(question: [:content])
+  end
+
 end

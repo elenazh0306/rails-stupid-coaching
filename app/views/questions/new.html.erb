@@ -1,0 +1,15 @@
+<div class="d-block">
+  <div class="welcome-page">
+    <h1 class="my-4">Stupid Coaching</h1>
+    <%= form_with model: @question do |form| %>
+      <% @question.errors.full_messages.each do |msg| %>
+        <p><%= msg %></p>
+      <% end %>
+
+      <%= form.text_field :content, placeholder: "Ask something…", autofocus: true %>
+      <%= form.submit "Ask!", class: "ask-btn" %>
+    <% end %>
+
+    <%= link_to "Past questions", questions_path %>
+  </div>
+</div>

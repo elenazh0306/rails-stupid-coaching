@@ -1,0 +1,10 @@
+<h1>Past questions</h1>
+
+<% @questions.each do |question| %>
+  <p>
+    <%= link_to question.content, question %>
+    → <%= question.answer %>
+  </p>
+<% end %>
+
+<%= link_to "Ask a new question", new_question_path %>
