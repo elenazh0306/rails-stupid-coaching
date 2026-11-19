@@ -13,17 +13,42 @@
   --peach: rgb(255, 222, 150);
   --coral: rgb(250, 133, 90);
   --tomato: rgb(201, 54, 56);
+  --honeydew: rgb(246, 255, 234);
+  --sky: rgb(98, 196, 218);
 }
+
+h1 {
+  font-family: "Rampart One", Impact, sans-serif;
+  font-size: 2rem;
+}
+
+p, label {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+}
+
+
 .answer {
-  border-left: solid 4px rgba(128, 128, 128, 0.297);
+  border: solid 2px var(--sky);
+  border-radius: 5px;
   padding-left: 18px;
-  background-color: rgba(255, 255, 0, 0.397);
+  padding-top: 12px;
+  background-color: var(--honeydew);
+  color: var(--sky);
+  align-self: flex-start;
+  min-width: 200px;
 }
 
 .question {
-  border-left: solid 4px rgba(128, 128, 128, 0.297);
-  padding-left: 18px;
-  background-color: rgba(159, 159, 158, 0.16);
+  border: solid 2px var(--peach);
+  border-radius: 5px;
+  padding: 6px;
+  background-color: var(--sky);
+  color: var(--peach);
+  margin-bottom: 18px;
+  align-self: flex-end;
+  text-align:end;
+  min-width: 200px;
 }
 
 .welcome-page {
@@ -39,16 +64,26 @@
   align-items: center;
 }
 
+.chat {
+  width: 80dvh;
+  height: 60dvh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .ask-btn {
   border-radius: 5px;
   background-color: var(--coral);
   color: var(--tomato);
   padding: 5px 10px;
   border: 1px solid var(--tomato);
-  box-shadow: 0 0 6px var(--coral), inset 0 0 6px transparent;
-  transition: box-shadow 0.3s ease;
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+
+  transition: background-color 0.3s ease;
 }
 
 .ask-btn:hover {
-  box-shadow: 0 0 6px transparent, inset 0 0 6px var(--tomato);
+  background-color: var(--peach);
 }
